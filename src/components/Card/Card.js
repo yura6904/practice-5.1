@@ -1,3 +1,4 @@
+import propTypes from 'prop-types'
 
 function Card(props) {
   return (
@@ -7,12 +8,15 @@ function Card(props) {
             <div className="card-body">
                 <h5 className="card-title">{props.item.title}</h5>
                 <p className="card-text">{props.item.text}</p>
-                <a href="https://www.youtube.com/watch?v=s0JHDfEk_7c" className="btn btn-primary">Go somewhere</a>
+                <a href={props.item.videoLink} className="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-    </li>
-        
+    </li>  
   )
+}
+
+Card.propTypes = {
+    item: propTypes.object
 }
 
 export default Card;
